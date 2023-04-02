@@ -22,10 +22,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
     var mqtt: CocoaMQTT? = nil
+    var location : CLLocation? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpUI()
         
         locationSwitch.addTarget(self, action: #selector(handleSwitch), for: UIControl.Event.valueChanged)
         initMqtt()
@@ -41,28 +41,22 @@ class HomeViewController: UIViewController {
     @objc func handleSwitch(mySwitch: UISwitch) {
         let value = locationSwitch.isOn
         if value {
-            if (CLLocationManager.locationServicesEnabled())
-            {
-                locationManager = CLLocationManager()
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.requestAlwaysAuthorization()
-                locationManager.startUpdatingLocation()
-                publish()
-            }
+            print("check location on")
+            statusLabel.text = "Online..."
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
         }else{
+            print("check location off")
+            statusLabel.text = "Offline..."
             resetMapView()
             latitudeLabel.text = "0"
             longtitudeLabel.text = "0"
         }
     }
-    
 
-    
-    
-    func setUpUI(){
-        statusLabel.text = "sawasdee"
-    }
     
 }
 
@@ -70,6 +64,8 @@ extension HomeViewController : CLLocationManagerDelegate {
     
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(#function)
+        //print("locations.last: \(locations.last)")
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -77,9 +73,12 @@ extension HomeViewController : CLLocationManagerDelegate {
             mapView.mapType = .standard
             mapView.showsUserLocation = true
             mapView.userTrackingMode = .follow
-            
-            latitudeLabel.text = String(format: "%.4f", location.coordinate.latitude)
-            longtitudeLabel.text = String(format: "%.4f",location.coordinate.longitude)
+            self.location = locations.first
+            print("location value: \(self.location)")
+            latitudeLabel.text = "latitude = \(String(format: "%.4f", location.coordinate.latitude))"
+            longtitudeLabel.text = "longtitude = \(String(format: "%.4f",location.coordinate.longitude))"
+            //print("\(latitudeLabel.text) , \(longtitudeLabel.text)")
+            publish()
         }
     }
 }
@@ -91,8 +90,8 @@ extension HomeViewController: CocoaMQTTDelegate {
         mqtt = CocoaMQTT(clientID: clientID, host: "test.mosquitto.org", port: 1883)
         mqtt?.username = ""
         mqtt?.password = ""
-        mqtt?.willMessage = CocoaMQTTMessage(topic: "/testMQTT", string: "far ja")
-        mqtt?.keepAlive = 10
+        mqtt?.willMessage = CocoaMQTTMessage(topic: "/testMQTT", string: "voravit")
+        mqtt?.keepAlive = 5
         mqtt?.delegate = self
         mqtt?.connect()
     }
@@ -103,7 +102,7 @@ extension HomeViewController: CocoaMQTTDelegate {
         if ack == .accept {
               print("MQTT connection successful!")
               mqtt.subscribe("your_topic")
-            }
+        }
     }
     
     ///
@@ -147,10 +146,15 @@ extension HomeViewController: CocoaMQTTDelegate {
     }
     
     func publish(){
-        
-        let message = "Hello, Far!" // The message to be published
-        let topic = "testMQTT" // The MQTT topic to which the message will be published
-        mqtt?.publish(topic, withString: message)
+        if let local = self.location {
+            let latitude = String(format: "%.4f", local.coordinate.latitude)
+            let longitude = String(format: "%.4f", local.coordinate.longitude)
+            
+            let message = "{Latitude:\(latitude), Longitude:\(longitude))}" // The message to be published
+            //print("check message \(message)")
+            let topic = "testMQTT" // The MQTT topic to which the message will be published
+            mqtt?.publish(topic, withString: message)
+        }
     }
     
 }
