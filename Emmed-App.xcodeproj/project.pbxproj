@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33FBDF47E09682FE6CE6BF63 /* Pods_Emmed_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C601D3E3C0B38860C5AADF /* Pods_Emmed_App.framework */; };
 		E0BD0ED529D9877600389513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED429D9877600389513 /* AppDelegate.swift */; };
 		E0BD0ED729D9877600389513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED629D9877600389513 /* SceneDelegate.swift */; };
 		E0BD0ED929D9877600389513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED829D9877600389513 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9388BC99777145304C5FE76E /* Pods-Emmed-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emmed-App.debug.xcconfig"; path = "Target Support Files/Pods-Emmed-App/Pods-Emmed-App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0BD0ED129D9877600389513 /* Emmed-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emmed-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD0ED429D9877600389513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BD0ED629D9877600389513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		E0BD0EDD29D9877700389513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0BD0EE029D9877700389513 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0BD0EE229D9877700389513 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5C601D3E3C0B38860C5AADF /* Pods_Emmed_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Emmed_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4083F2987A1117C7141233 /* Pods-Emmed-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emmed-App.release.xcconfig"; path = "Target Support Files/Pods-Emmed-App/Pods-Emmed-App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33FBDF47E09682FE6CE6BF63 /* Pods_Emmed_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30654A18998D35EE1A08D219 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5C601D3E3C0B38860C5AADF /* Pods_Emmed_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0BD0EC829D9877600389513 = {
 			isa = PBXGroup;
 			children = (
 				E0BD0ED329D9877600389513 /* Emmed-App */,
 				E0BD0ED229D9877600389513 /* Products */,
+				EA71A0EE630B0321DBF52D8E /* Pods */,
+				30654A18998D35EE1A08D219 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = "Emmed-App";
 			sourceTree = "<group>";
 		};
+		EA71A0EE630B0321DBF52D8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9388BC99777145304C5FE76E /* Pods-Emmed-App.debug.xcconfig */,
+				EB4083F2987A1117C7141233 /* Pods-Emmed-App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0BD0EE529D9877700389513 /* Build configuration list for PBXNativeTarget "Emmed-App" */;
 			buildPhases = (
+				FEF58FB85F5B5E6D189C9677 /* [CP] Check Pods Manifest.lock */,
 				E0BD0ECD29D9877600389513 /* Sources */,
 				E0BD0ECE29D9877600389513 /* Frameworks */,
 				E0BD0ECF29D9877600389513 /* Resources */,
+				46B23A693DFA717FCE0BDD35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46B23A693DFA717FCE0BDD35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Emmed-App/Pods-Emmed-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Emmed-App/Pods-Emmed-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Emmed-App/Pods-Emmed-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEF58FB85F5B5E6D189C9677 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Emmed-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0BD0ECD29D9877600389513 /* Sources */ = {
@@ -282,6 +350,7 @@
 		};
 		E0BD0EE629D9877700389513 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9388BC99777145304C5FE76E /* Pods-Emmed-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +378,7 @@
 		};
 		E0BD0EE729D9877700389513 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB4083F2987A1117C7141233 /* Pods-Emmed-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
