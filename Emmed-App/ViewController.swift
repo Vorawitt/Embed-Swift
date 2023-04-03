@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     var locationManager: CLLocationManager!
     var mqtt: CocoaMQTT? = nil
     var location : CLLocation? = nil
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,8 @@ extension HomeViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(#function)
         //print("locations.last: \(locations.last)")
+        timer?.invalidate()
+        
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -78,7 +81,9 @@ extension HomeViewController : CLLocationManagerDelegate {
             latitudeLabel.text = "latitude = \(String(format: "%.4f", location.coordinate.latitude))"
             longtitudeLabel.text = "longtitude = \(String(format: "%.4f",location.coordinate.longitude))"
             //print("\(latitudeLabel.text) , \(longtitudeLabel.text)")
-            publish()
+            timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { [weak self] _ in
+                        self?.publish()
+                    }
         }
     }
 }
@@ -150,7 +155,7 @@ extension HomeViewController: CocoaMQTTDelegate {
             let latitude = String(format: "%.4f", local.coordinate.latitude)
             let longitude = String(format: "%.4f", local.coordinate.longitude)
             
-            let message = "{Latitude:\(latitude), Longitude:\(longitude))}" // The message to be published
+            let message = "{Latitude:\(latitude), Longitude:\(longitude)}" // The message to be published
             //print("check message \(message)")
             let topic = "testMQTT" // The MQTT topic to which the message will be published
             mqtt?.publish(topic, withString: message)
