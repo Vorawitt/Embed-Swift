@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33FBDF47E09682FE6CE6BF63 /* Pods_Emmed_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C601D3E3C0B38860C5AADF /* Pods_Emmed_App.framework */; };
+		E0A2E26729E006BC00A0816E /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2E26629E006BC00A0816E /* TabbarController.swift */; };
 		E0BD0ED529D9877600389513 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED429D9877600389513 /* AppDelegate.swift */; };
 		E0BD0ED729D9877600389513 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED629D9877600389513 /* SceneDelegate.swift */; };
 		E0BD0ED929D9877600389513 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD0ED829D9877600389513 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		9388BC99777145304C5FE76E /* Pods-Emmed-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Emmed-App.debug.xcconfig"; path = "Target Support Files/Pods-Emmed-App/Pods-Emmed-App.debug.xcconfig"; sourceTree = "<group>"; };
+		E0A2E26629E006BC00A0816E /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		E0BD0ED129D9877600389513 /* Emmed-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Emmed-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD0ED429D9877600389513 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BD0ED629D9877600389513 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				E0BD0ED429D9877600389513 /* AppDelegate.swift */,
 				E0BD0ED629D9877600389513 /* SceneDelegate.swift */,
 				E0BD0ED829D9877600389513 /* ViewController.swift */,
+				E0A2E26629E006BC00A0816E /* TabbarController.swift */,
 				E0BD0EDA29D9877600389513 /* Main.storyboard */,
 				E0BD0EDD29D9877700389513 /* Assets.xcassets */,
 				E0BD0EDF29D9877700389513 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BD0ED929D9877600389513 /* ViewController.swift in Sources */,
+				E0A2E26729E006BC00A0816E /* TabbarController.swift in Sources */,
 				E0BD0ED529D9877600389513 /* AppDelegate.swift in Sources */,
 				E0BD0ED729D9877600389513 /* SceneDelegate.swift in Sources */,
 			);
