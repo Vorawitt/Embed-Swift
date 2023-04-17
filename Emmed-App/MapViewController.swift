@@ -26,7 +26,6 @@ struct DeviceData: Decodable {
 class MapViewController: UIViewController {
     
     @IBOutlet weak var MapView: MKMapView!
-    @IBOutlet weak var SearchBox: UITextField!
     
     private var deviceData: [DeviceData] = []
     private var loading = true

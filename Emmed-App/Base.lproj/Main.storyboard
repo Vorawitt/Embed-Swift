@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAx-8B-Iyc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jAx-8B-Iyc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,10 +13,13 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emmed_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7I5-TU-wCa"/>
+                        <viewControllerLayoutGuide type="bottom" id="kZG-np-Bke"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
@@ -29,6 +31,10 @@
         <scene sceneID="hJa-xs-HeN">
             <objects>
                 <viewController id="eKc-m2-a4d" customClass="HomeViewController" customModule="Emmed_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gaZ-XQ-Ppo"/>
+                        <viewControllerLayoutGuide type="bottom" id="62Y-u0-FyQ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Til-Uf-EB9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,16 +106,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="X2r-Ha-7Yq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LZH-LZ-3uk" firstAttribute="leading" secondItem="X2r-Ha-7Yq" secondAttribute="leading" id="7Ug-F8-Bn1"/>
+                            <constraint firstItem="LZH-LZ-3uk" firstAttribute="leading" secondItem="Til-Uf-EB9" secondAttribute="leading" id="7Ug-F8-Bn1"/>
                             <constraint firstItem="c83-RM-yD6" firstAttribute="top" secondItem="LZH-LZ-3uk" secondAttribute="bottom" constant="16" id="L0j-AS-j5Q"/>
-                            <constraint firstItem="X2r-Ha-7Yq" firstAttribute="trailing" secondItem="c83-RM-yD6" secondAttribute="trailing" id="N4z-JQ-iyf"/>
-                            <constraint firstItem="LZH-LZ-3uk" firstAttribute="top" secondItem="X2r-Ha-7Yq" secondAttribute="top" id="NOD-ge-kqQ"/>
-                            <constraint firstItem="X2r-Ha-7Yq" firstAttribute="bottom" secondItem="c83-RM-yD6" secondAttribute="bottom" id="OsD-26-7iJ"/>
-                            <constraint firstItem="X2r-Ha-7Yq" firstAttribute="trailing" secondItem="LZH-LZ-3uk" secondAttribute="trailing" id="bta-vr-lh8"/>
-                            <constraint firstItem="c83-RM-yD6" firstAttribute="leading" secondItem="X2r-Ha-7Yq" secondAttribute="leading" id="zTa-Tj-V9r"/>
+                            <constraint firstAttribute="trailing" secondItem="c83-RM-yD6" secondAttribute="trailing" id="N4z-JQ-iyf"/>
+                            <constraint firstItem="LZH-LZ-3uk" firstAttribute="top" secondItem="gaZ-XQ-Ppo" secondAttribute="bottom" id="NOD-ge-kqQ"/>
+                            <constraint firstItem="62Y-u0-FyQ" firstAttribute="top" secondItem="c83-RM-yD6" secondAttribute="bottom" id="OsD-26-7iJ"/>
+                            <constraint firstAttribute="trailing" secondItem="LZH-LZ-3uk" secondAttribute="trailing" id="bta-vr-lh8"/>
+                            <constraint firstItem="c83-RM-yD6" firstAttribute="leading" secondItem="Til-Uf-EB9" secondAttribute="leading" id="zTa-Tj-V9r"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="MyMap" image="mappin.square.fill" catalog="system" id="iM4-Gs-aKC"/>
@@ -131,30 +136,42 @@
         <scene sceneID="mn5-4J-Ug1">
             <objects>
                 <viewController id="MOR-ms-GdH" customClass="MapViewController" customModule="Emmed_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikV-UU-ph0"/>
+                        <viewControllerLayoutGuide type="bottom" id="UPx-VK-59c"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xQk-oy-9n8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="CXN-Aw-skN">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ค้นหา" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m20-Fb-QFj">
-                                <rect key="frame" x="85" y="59" width="222" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emU-9x-0vr">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEU-SV-Sck">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="710"/>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="fEU-SV-Sck" firstAttribute="leading" secondItem="emU-9x-0vr" secondAttribute="leading" id="8Ov-nZ-sna"/>
+                                    <constraint firstAttribute="trailing" secondItem="fEU-SV-Sck" secondAttribute="trailing" id="NcI-Ie-0Kl"/>
+                                    <constraint firstItem="fEU-SV-Sck" firstAttribute="top" secondItem="emU-9x-0vr" secondAttribute="top" id="kVo-TK-lp8"/>
+                                    <constraint firstAttribute="bottom" secondItem="fEU-SV-Sck" secondAttribute="bottom" id="qzu-KS-zZe"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ytt-s0-fZ1"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="emU-9x-0vr" firstAttribute="leading" secondItem="xQk-oy-9n8" secondAttribute="leading" id="3uY-yW-26x"/>
+                            <constraint firstAttribute="trailing" secondItem="emU-9x-0vr" secondAttribute="trailing" id="7pA-7C-i7k"/>
+                            <constraint firstItem="UPx-VK-59c" firstAttribute="top" secondItem="emU-9x-0vr" secondAttribute="bottom" id="Ima-4I-LV5"/>
+                            <constraint firstItem="emU-9x-0vr" firstAttribute="top" secondItem="ikV-UU-ph0" secondAttribute="bottom" id="LSN-aP-ZNn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="network" catalog="system" id="PVQ-xa-T10"/>
                     <connections>
-                        <outlet property="MapView" destination="CXN-Aw-skN" id="Ule-Ns-Gdj"/>
-                        <outlet property="SearchBox" destination="m20-Fb-QFj" id="srx-Ws-8DH"/>
+                        <outlet property="MapView" destination="fEU-SV-Sck" id="Rb9-lZ-r5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkI-f5-Zov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,9 +206,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
